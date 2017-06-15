@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>New York</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div id="nav" data-bind="css: { on: !hideNav(),off: hideNav }">
+    <div id="list_view">
+      <div id="head">
+        <h1>Filter</h1>
+        <input type="text" data-bind="value: searchStr,valueUpdate: 'afterkeydown'">
+      </div>
+      <ul data-bind="foreach:MarkerListViews">
+        <li data-bind="text:name,visible: isVisible,click:triggerMarker"></li>
+      </ul>
+    </div>
+    <div id="close_nav" data-bind="click:closeNav">
+      <i class="glyphicon"
+ data-bind="css: {'glyphicon-chevron-left':!hideNav(),'glyphicon-chevron-right':hideNav}"></i>
+    </div>
+  </div>
+
+  <div id="container_right" class="container-fluid">
+    <div class="row">
+      <div id="main-content" ></div>
+    </div>
+  </div>
+
+
+</body>
+<script type="text/javascript" src="libs/knockout-3.4.2.js"></script>
+<script type="text/javascript" src="libs/jquery.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/map.js"></script>
+<script type="text/javascript" src="js/wiki.js"></script>
+<script async defer
+ src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAqIDxvjg-vLNnOJQtMPc98DTZLcOUExFE&callback=initMap">
+</script>
+</html>
