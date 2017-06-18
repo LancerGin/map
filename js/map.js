@@ -144,3 +144,7 @@ function setContent(marker,infowindow){
   // 在当前 marker的上面打开 infowindow
   infowindow.open(map, marker);
 }
+
+function mapError(){
+  document.body.innerHTML = "此页面不能正确加载 Google 地图，请检查网络设置。";
+}
